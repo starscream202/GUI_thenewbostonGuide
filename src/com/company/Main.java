@@ -31,7 +31,7 @@ public class Main extends Application {
         Label label=new Label("Welcome to dittoIT");
 
         button=new Button("Magic button!!");//creating button
-        button3=new Button("Holy Button");
+        button3=new Button("Holy Button!!");
 
         //this will call handle method for button to have action
         button.setOnAction(e-> {
