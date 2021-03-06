@@ -42,7 +42,7 @@ public class Main extends Application {
         button3.setOnAction(e-> closeProgeam());
         HBox topMenu=new HBox();
         Button tipShare=new Button("tipShare");
-        Button inventory= new Button("inventory");
+        Button inventory= new Button("Inventory");
         Button cashReport=new Button("cashReport");
         topMenu.getChildren().addAll(tipShare,cashReport,inventory);
 
