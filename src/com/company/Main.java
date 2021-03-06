@@ -6,6 +6,8 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -20,6 +22,7 @@ public class Main extends Application {
 	// first step extend Application
         launch(args);//method in Application class where it calls start method
     }
+
 
     @Override//automatically overides when u make start method
     public void start(Stage primaryStage) throws Exception {
@@ -37,10 +40,15 @@ public class Main extends Application {
 
         });
         button3.setOnAction(e-> closeProgeam());
+        HBox topMenu=new HBox();
+        Button tipShare=new Button("tipShare");
+        Button inventory= new Button("inventory");
+        Button cashReport=new Button("cashReport");
+        topMenu.getChildren().addAll(tipShare,cashReport,inventory);
 
         VBox layout1=new VBox(20);
         layout1.getChildren().addAll(label,button,button3);
-        scene1=new Scene(layout1,500,600);
+
 
 
         button2=new Button("Ordinary Button");
@@ -49,6 +57,10 @@ public class Main extends Application {
             System.out.println(result);
             window.setScene(scene1);
         });
+        BorderPane borderPane=new BorderPane();
+        borderPane.setTop(topMenu);
+        borderPane.setLeft(layout1);
+        scene1=new Scene(borderPane,500,600);
 
 
         StackPane layout2= new StackPane();
