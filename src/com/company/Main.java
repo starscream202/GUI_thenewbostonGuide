@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -12,9 +13,11 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.awt.*;
+
 public class Main extends Application {
 
-    Button button, button2, button3;
+    Button button, button2, button3,button4;
     Stage window;
     Scene scene1,scene2;
 
@@ -30,8 +33,19 @@ public class Main extends Application {
 
         Label label=new Label("Welcome to dittoIT");
 
+        //making checkboxes thenewboston video 11
+        CheckBox box1=new CheckBox("Beignets");
+        CheckBox box2=new CheckBox("Cafe Au Lait");
+        CheckBox box3=new CheckBox("Hot Chocolate");
+        box1.setSelected(true);
+        box2.setSelected(true);
+
         button=new Button("Magic button!!");//creating button
         button3=new Button("Holy Button!!");
+        button4=new Button("Order Now");//thenewboston video 11
+        button4.setOnAction(e->handleCheckbox(box1,box2,box3));
+
+
 
         //this will call handle method for button to have action
         button.setOnAction(e-> {
@@ -47,7 +61,7 @@ public class Main extends Application {
         topMenu.getChildren().addAll(tipShare,cashReport,inventory);
 
         VBox layout1=new VBox(20);
-        layout1.getChildren().addAll(label,button,button3);
+        layout1.getChildren().addAll(label,button,button3,box1,box2,box3,button4);
 
 
 
@@ -85,6 +99,20 @@ public class Main extends Application {
             window.close();
         }
     };
+    //going to make button 4 handle checkboxes thenewboston video 11
+    private void handleCheckbox(CheckBox box1,CheckBox box2,CheckBox box3){
+        String order="Customer Order:\n";
+        if(box1.isSelected()){
+            order+="Beignets\n";
+        }
+        if(box2.isSelected()){
+            order+="Cafe Au Lait\n";
+        }
+        if(box3.isSelected()){
+            order+="Hot Chocolate\n";
+        }
+        System.out.println(order);
+    }
 
 
 }

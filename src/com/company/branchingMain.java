@@ -43,6 +43,8 @@ public class branchingMain extends Application{
 
         Button loginButton= new Button("Login");
         GridPane.setConstraints(loginButton,1,2);
+        loginButton.setOnAction(e-> getCreds(nameInput,passInput));
+
 
         gridPane.getChildren().addAll(nameLabel,nameInput,passLabel,passInput,loginButton);
 
@@ -53,5 +55,21 @@ public class branchingMain extends Application{
 
 
 
+    }
+    private boolean isInt(TextField input,String message){
+        try{
+            int age=Integer.parseInt(input.getText());
+            System.out.println("User is "+age);
+            return true;
+        }catch (NumberFormatException e){
+            System.out.println("Error ");
+        }return true;
+    }
+    public String getCreds(TextField username,TextField password){
+        String cred=username.getText();
+        String cred2=password.getText();
+        String credentials=cred+" "+cred2;
+        System.out.println(credentials);
+        return credentials;
     }
 }
