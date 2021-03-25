@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
@@ -11,10 +12,11 @@ import javafx.stage.Window;
 
 
 public class ComboBox_vid14 extends Application {
-    Button button;
+    Button button, button2;
     Scene scene;
     Stage window;
     ComboBox<String> comboBox;
+    ListView<String> listView;
     public static void main(String[] args) {
         launch(args);
     }
@@ -35,7 +37,7 @@ public class ComboBox_vid14 extends Application {
                 "Tsukyomi"
         );
         comboBox.setPromptText("Choose a Ninjutsu");
-        comboBox.setEditable(true);
+        //comboBox.setEditable(true);
         comboBox.setOnAction(e-> System.out.println(comboBox.getValue()));
 
         VBox layout=new VBox(20);
